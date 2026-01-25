@@ -56,7 +56,7 @@ jobs:
               python3 make.py esp32 BOARD=${{fromJSON(matrix.info).BOARD}} BOARD_VARIANT=${{fromJSON(matrix.info).BOARD_VARIANT}} --flash-size=${{fromJSON(matrix.info).FLASH}} DISPLAY=${{fromJSON(matrix.info).DISPLAY}} INDEV=${{fromJSON(matrix.info).INDEV}} --dual-core-threads --ota
             else
               echo "python3 make.py esp32 BOARD=${{fromJSON(matrix.info).BOARD}} BOARD_VARIANT=${{fromJSON(matrix.info).BOARD_VARIANT}} --flash-size=${{fromJSON(matrix.info).FLASH}} DISPLAY=${{fromJSON(matrix.info).DISPLAY}} INDEV=${{fromJSON(matrix.info).INDEV}} --enable-jtag-repl=y --dual-core-threads --ota"
-              python3 make.py esp32 BOARD=${{fromJSON(matrix.info).BOARD}} --flash-size=${{fromJSON(matrix.info).FLASH}} DISPLAY=${{fromJSON(matrix.info).DISPLAY}} INDEV=${{fromJSON(matrix.info).INDEV}} --dual-core-threads --ota
+              python3 make.py esp32 BOARD=${{fromJSON(matrix.info).BOARD}} --flash-size=${{fromJSON(matrix.info).FLASH}} DISPLAY=${{fromJSON(matrix.info).DISPLAY}} INDEV=${{fromJSON(matrix.info).INDEV}} --dual-core-threads --ota --enable-uart-repl=n --enable-cdc-repl=y --enable-jtag-repl=n
             fi
             echo "FIREMWARE=LVGL_MicroPython-${{fromJSON(matrix.info).BOARD}}_N${{fromJSON(matrix.info).FLASH}}_${{fromJSON(matrix.info).DISPLAY}}_${{fromJSON(matrix.info).INDEV}}-$(date +"%Y%m%d%H%M").bin" >> $GITHUB_ENV
           fi
