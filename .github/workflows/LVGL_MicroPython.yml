@@ -5,7 +5,7 @@ on:
 
 env:
   LVGL: lvgl_micropython
-  LVGL_REPO: https://github.com/lvgl-micropython/lvgl_micropython.git
+  LVGL_REPO: https://github.com/Cookie987/lvgl_micropython.git
   TZ: Asia/Shanghai
 
 jobs:
